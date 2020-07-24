@@ -12,4 +12,5 @@ abstract class IProductRepository implements Disposable {
   Future<Either<Failure, int>> post(ProductModel product);
   Future<Either<Failure, bool>> delete(int id);
   Future<Either<Failure, bool>> active(int id);
+  Future<Either<Failure, String>> downloadPdf();
 }

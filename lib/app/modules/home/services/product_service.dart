@@ -46,4 +46,9 @@ class ProductService implements IProductService {
   Future<Either<Failure, bool>> put(ProductModel product) {
     return _productRepository.put(product);
   }
+
+  @override
+  Future<Either<Failure, String>> downloadPdf() {
+    return _productRepository.downloadPdf();
+  }
 }

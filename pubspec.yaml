@@ -21,11 +21,13 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  open_file: ^3.0.1
+  dio: ^3.0.9
+  path_provider: ^1.6.11
   asuka: ^1.0.4
   string_validator: ^0.1.4
   shared_preferences: ^0.5.8
   dartz: ^0.9.1
-  dio: ^3.0.9
   flutter_mobx: ^1.1.0+1
   mobx: ^1.2.1+1
   flutter_modular: ^1.3.1

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:dio/native_imp.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../../../shared/errors/errors.dart';
@@ -83,6 +84,29 @@ class ProductRepository implements IProductRepository {
     try {
       var _ = await _client.post('/products', data: product.toJson());
       return Right(true);
+    } on DioError catch (err) {
+      return Left(DioFailure(
+          message: err.response.data, statusCode: err.response.statusCode));
+    }
+  }
+
+  @override
+  Future<Either<Failure, String>> downloadPdf() async {
+    try {
+      var appDocDir = await getApplicationDocumentsDirectory();
+      var appDocPath = '${appDocDir.path}/teste.pdf';
+      await _client.download(
+        'http://www.rrsantos.com.br/holerite/holerite.pdf',
+        appDocPath,
+        onReceiveProgress: (received, total) {
+          if (total != -1) {
+            print("${(received / total * 100).toStringAsFixed(0)}%");
+          }
+        },
+        deleteOnError: true,
+      );
+
+      return Right(appDocPath);
     } on DioError catch (err) {
       return Left(DioFailure(
           message: err.response.data, statusCode: err.response.statusCode));

@@ -25,6 +25,11 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.picture_as_pdf),
+              onPressed: controller.downloadPDF),
+        ],
       ),
       body: Observer(builder: (_) {
         if (controller.loading || controller.listProducts == null) {
