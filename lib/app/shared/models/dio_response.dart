@@ -8,7 +8,7 @@ class DioResponse {
 
   final dynamic data;
   final DateTime expire;
-  bool get expired => expire.difference(DateTime.now()).inDays <= 0;
+  bool get expired => expire.difference(DateTime.now()).inMinutes < 0;
 
   DioResponse copyWith({
     dynamic data,

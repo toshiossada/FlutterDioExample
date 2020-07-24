@@ -9,6 +9,7 @@ import '../models/authenticate_model.dart';
 import '../models/user_model.dart';
 import '../repositories/interfaces/user_repository_interface.dart';
 import 'interfaces/user_service_interface.dart';
+import 'local_storage_service.dart';
 
 part 'user_service.g.dart';
 
@@ -23,19 +24,20 @@ class UserService implements IUserService {
 
   @override
   Future<UserModel> getCurrentUser() async {
-    await Future.delayed(Duration(seconds: 2));
-    var prefs = await SharedPreferences.getInstance();
-    if (prefs.containsKey('current_user')) {
-      var res = jsonDecode(prefs.getString('current_user'));
+    var contains = await LocalStorageService.cointains('current_user');
+    if (contains) {
+      var res = jsonDecode(
+          await LocalStorageService.getValue<String>('current_user'));
       return UserModel.fromJson(res);
     } else {
       return null;
     }
   }
 
+  @override
   Future<void> saveLocalDB(UserModel user) async {
-    var prefs = await SharedPreferences.getInstance();
-    prefs.setString('current_user', jsonEncode(user.toJson()));
+    LocalStorageService.setValue<String>(
+        'current_user', jsonEncode(user.toJson()));
   }
 
   @override

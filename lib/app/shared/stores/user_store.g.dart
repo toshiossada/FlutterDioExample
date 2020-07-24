@@ -7,7 +7,7 @@ part of 'user_store.dart';
 // **************************************************************************
 
 final $UserStore = BindInject(
-  (i) => UserStore(i<IUserService>()),
+  (i) => UserStore(i<dynamic>()),
   singleton: false,
   lazy: true,
 );
