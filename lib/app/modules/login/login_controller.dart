@@ -37,15 +37,21 @@ abstract class _LoginControllerBase with Store {
   void setPassword(String v) => password = v;
 
   Future<void> authenticate() async {
-    _loading.show();
-    await Future.delayed(Duration(seconds: 1));
-    var result = await _userService.login(credential);
-    await _loading.hide();
-    result.fold((failure) {
-      asuka.showSnackBar(SnackBar(content: Text(failure.message)));
-    }, (user) {
-      userStore.setUser(user);
-      Modular.to.pushReplacementNamed('/home');
-    });
+    try {
+      _loading.show();
+      await Future.delayed(Duration(seconds: 1));
+      var result = await _userService.login(credential);
+      await _loading.hide();
+      result.fold((failure) {
+        asuka.showSnackBar(SnackBar(content: Text(failure.message)));
+      }, (user) {
+        userStore.setUser(user);
+        Modular.to.pushReplacementNamed('/home');
+      });
+    } catch (e) {
+      asuka.showSnackBar(SnackBar(content: Text(e.toString())));
+    } finally {
+      await _loading.hide();
+    }
   }
 }

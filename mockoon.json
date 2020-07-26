@@ -1,0 +1,215 @@
+{
+    "source": "mockoon:1.8.0",
+    "data": [
+        {
+            "type": "environment",
+            "item": {
+                "uuid": "",
+                "lastMigration": 10,
+                "name": "New environment",
+                "endpointPrefix": "",
+                "latency": 0,
+                "port": 3001,
+                "routes": [
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{}",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "post",
+                        "endpoint": "user/login",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n    \"login\": \"toshiossada\",\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsIm5hbWUiOiJNYXJjaW8gTi4gU2FsZXMiLCJlbWFpbCI6InRlY3NvZml4QGdtYWlsLmNvbSIsImV4cCI6MTU5NTU1ODAyOH0.7b3CHs-x4WtZ0OesoiHr5BuZTR1vY1vPTuYgWZqndhI\",\n    \"refreshToken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsIm5hbWUiOiJNYXJjaW8gTi4gU2FsZXMiLCJlbWFpbCI6InRlY3NvZml4QGdtYWlsLmNvbSIsImV4cCI6MTU5NTU1ODAyOH0.7b3CHs-x4WtZ0OesoiHr5BuZTR1vY1vPTuYgWZqndhI\"\n}",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "products",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[\n    {\n        \"id\": 1,\n        \"description\": \"Curso Flutter Basico\"\n    },\n    {\n        \"id\": 2,\n        \"description\": \"Curso Flutter Intermediario\"\n    },\n    {\n        \"id\": 3,\n        \"description\": \"Curso Flutter Avançado\"\n    },\n    {\n        \"id\": 4,\n        \"description\": \"Curso Mobx\"\n    },\n    {\n        \"id\": 5,\n        \"description\": \"Curso Modular\"\n    },\n    {\n        \"id\": 6,\n        \"description\": \"Curso DIO\"\n    }\n]",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "post",
+                        "endpoint": "products",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n    \"id\": 10\n}",
+                                "latency": 0,
+                                "statusCode": "201",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "put",
+                        "endpoint": "products",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{}",
+                                "latency": 0,
+                                "statusCode": "204",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "patch",
+                        "endpoint": "products",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{}",
+                                "latency": 0,
+                                "statusCode": "204",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "products/1",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n        \"id\": 1,\n        \"description\": \"Curso Flutter Basico\"\n}",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": []
+                            }
+                        ],
+                        "enabled": true
+                    }
+                ],
+                "proxyMode": false,
+                "proxyHost": "",
+                "https": false,
+                "cors": true,
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "proxyReqHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "proxyResHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ]
+            }
+        }
+    ]
+}

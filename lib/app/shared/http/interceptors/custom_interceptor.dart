@@ -13,13 +13,10 @@ class CustomInterceptors extends InterceptorsWrapper {
   Future onRequest(RequestOptions options) async {
     var userService = Modular.get<IUserService>();
     var user = await userService.getCurrentUser();
-    var path = options.path;
 
-    if (path != 'users/login' && path != 'users/forgotPassword') {
-      if (user?.token != null && user.token.isNotEmpty) {
-        var headerAuth = genToken(user.token);
-        options.headers['Authorization'] = headerAuth;
-      }
+    if (user?.token != null && user.token.isNotEmpty) {
+      var headerAuth = genToken(user.token);
+      options.headers['Authorization'] = headerAuth;
     }
     if (kDebugMode) {
       debugPrint(json.encode("BaseURL: ${options.baseUrl}"));
