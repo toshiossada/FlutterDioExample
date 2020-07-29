@@ -41,7 +41,6 @@ abstract class _LoginControllerBase with Store {
       _loading.show();
       await Future.delayed(Duration(seconds: 1));
       var result = await _userService.login(credential);
-      await _loading.hide();
       result.fold((failure) {
         asuka.showSnackBar(SnackBar(content: Text(failure.message)));
       }, (user) {
