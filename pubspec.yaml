@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  font_awesome_flutter: ^8.8.1
   open_file: ^3.0.1
   dio: ^3.0.9
   path_provider: ^1.6.11

@@ -23,7 +23,7 @@ class AppModule extends MainModule {
         $LoadingDialog,
         Bind(
           (i) => BaseOptions(
-            baseUrl: 'http://192.168.15.12:3001/',
+            baseUrl: 'http://192.168.15.15:3001/',
             connectTimeout: 5000,
           ),
         ),

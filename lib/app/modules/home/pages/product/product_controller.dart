@@ -16,7 +16,6 @@ abstract class _ProductControllerBase with Store {
   final IProductService _productService;
 
   _ProductControllerBase(this._productService, {@Param this.id}) {
-    ;
     if (id != null && id != '-1') load();
   }
   TextEditingController txtDescricao = TextEditingController();

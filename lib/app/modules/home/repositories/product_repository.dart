@@ -48,6 +48,7 @@ class ProductRepository implements IProductRepository {
   @override
   Future<Either<Failure, ProductModel>> getById(int id) async {
     try {
+            
       var response = await _client.get('/products/$id');
       var result = ProductModel.fromJson(response.data);
       return Right(result);
